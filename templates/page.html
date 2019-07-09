@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+
+    <h1> Address Book</h1>
+
+    <form method="POST" action="/">
+    <div>
+        <input type="text" name="name">
+    </div>
+
+        <div>
+            <input type="tel" name="phone" pattern ="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        </div>
+
+        <div>
+            <button type = "sumbit">Upload</button>
+        </div>
+    </form>
+
+</div>
+
+<div>
+
+    {% for address in saveAddress %}
+    <p> {{ address['name'] }}</p>
+    <p> {{ address['phone'] }}</p>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
+

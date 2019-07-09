@@ -1,0 +1,19 @@
+#myHeader {
+ background-color : white;
+ color: green;
+ text_align: center;
+
+ padding: 40px;
+
+
+}
+
+#content {
+
+background-color : white;
+ color: red;
+ text_align: center;
+
+ padding: 40px;
+
+}
