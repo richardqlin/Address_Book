@@ -25,9 +25,12 @@
 <div>
 
     {% for address in saveAddress %}
-    <p> {{ address['name'] }}</p>
-    <p> {{ address['phone'] }}</p>
+    <div>
+    <p><code> </b>{{ address['name'] }} </code></p>
+    <p> <code> </b>{{ address['phone'] }}</code></p>
 
+    <a href="/delete/{{ address['_id'] }}"> Delete </a>
+</div>
     {% endfor %}
 </div>
 
