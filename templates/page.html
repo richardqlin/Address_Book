@@ -2,35 +2,34 @@
 
 {% block content %}
 
-<div class="jumbotron">
-
+<div class="jumbotron ">
+<div class="text-center">
     <h1> Address Book</h1>
+</div>
+</div>
+    <form class="form_inline" method="POST" action="/" >
+    <div class = "text-center">
+        <input  type="text" name="name">
 
-    <form method="POST" action="/">
-    <div>
-        <input type="text" name="name">
-    </div>
 
-        <div>
+
             <input type="tel" name="phone" pattern ="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-        </div>
 
-        <div>
-            <button type = "sumbit">Upload</button>
+            <button class="btn-warning" type = "sumbit">Upload</button>
         </div>
     </form>
 
-</div>
 
-<div>
+<div class="container">
 
     {% for address in saveAddress %}
-    <div>
-    <p><code> </b>{{ address['name'] }} </code></p>
-    <p> <code> </b>{{ address['phone'] }}</code></p>
 
-    <a href="/delete/{{ address['_id'] }}"> Delete </a>
-</div>
+   <p><code><b>Name: {{ address['name'] }}</b> </code>
+   <a href="/delete/{{ address['_id'] }}"> <button class="btn-danger" >&times</button>  </a></p>
+    <p> <code> <b>Phone Number:</b>{{ address['phone'] }}</code></p>
+
+
+
     {% endfor %}
 </div>
 
